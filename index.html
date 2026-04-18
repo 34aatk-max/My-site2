@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --navy: #002880;
       --blue: #003CA2;
@@ -18,33 +18,132 @@
       --gray: #4A4A6A;
       --border: #D0D8F0;
     }
-
-    body {
-      font-family: 'Tajawal', sans-serif;
-      background: var(--white);
-      color: var(--black);
-      direction: rtl;
+    body { font-family: 'Tajawal', sans-serif; background: var(--white); color: var(--black); direction: rtl; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 40px; background: var(--white); border-bottom: 2px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .logo-text { font-size: 20px; font-weight: 800; color: var(--blue); }
+    .logo-text span { display: block; font-size: 11px; font-weight: 400; color: var(--gray); }
+    .btn-primary { background: var(--blue); color: var(--white); font-family: 'Tajawal', sans-serif; font-size: 15px; font-weight: 700; padding: 12px 28px; border: none; border-radius: 6px; cursor: pointer; text-decoration: none; display: inline-block; transition: transform 0.2s; }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-white { background: var(--white); color: var(--blue); font-family: 'Tajawal', sans-serif; font-size: 15px; font-weight: 700; padding: 14px 36px; border: none; border-radius: 6px; cursor: pointer; text-decoration: none; display: inline-block; transition: transform 0.2s; }
+    .btn-white:hover { transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--white); font-family: 'Tajawal', sans-serif; font-size: 15px; font-weight: 500; padding: 14px 36px; border: 2px solid rgba(255,255,255,0.5); border-radius: 6px; cursor: pointer; text-decoration: none; display: inline-block; }
+    .hero { background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, var(--blue-light) 100%); color: var(--white); padding: 90px 40px 80px; text-align: center; }
+    .guarantee-banner { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius: 50px; padding: 8px 20px; font-size: 13px; font-weight: 500; margin-bottom: 32px; }
+    .hero h1 { font-size: 38px; font-weight: 800; line-height: 1.5; max-width: 700px; margin: 0 auto 20px; }
+    .hero h1 em { font-style: normal; color: #7EC8FF; }
+    .hero p { font-size: 17px; font-weight: 300; color: rgba(255,255,255,0.85); max-width: 500px; margin: 0 auto 40px; line-height: 1.8; }
+    .cta-group { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .pain-section { background: var(--off-white); padding: 70px 40px; text-align: center; }
+    .section-label { font-size: 13px; font-weight: 700; color: var(--blue); margin-bottom: 16px; }
+    .section-title { font-size: 30px; font-weight: 800; color: var(--black); margin-bottom: 50px; line-height: 1.5; }
+    .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto; }
+    .pain-card { background: var(--white); border: 2px solid var(--border); border-radius: 12px; padding: 28px 24px; text-align: right; transition: border-color 0.3s, transform 0.3s; }
+    .pain-card:hover { border-color: var(--blue); transform: translateY(-4px); }
+    .pain-icon { font-size: 32px; margin-bottom: 12px; }
+    .pain-text { font-size: 15px; font-weight: 600; color: var(--black); line-height: 1.6; }
+    .solution-section { padding: 80px 40px; text-align: center; background: var(--white); }
+    .solution-desc { font-size: 18px; font-weight: 400; color: var(--gray); max-width: 550px; margin: 0 auto; line-height: 1.8; }
+    .how-section { background: var(--navy); color: var(--white); padding: 80px 40px; text-align: center; }
+    .how-section .section-label { color: #7EC8FF; }
+    .how-section .section-title { color: var(--white); }
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); max-width: 900px; margin: 0 auto; }
+    .step-item { padding: 20px 16px; }
+    .step-num { width: 72px; height: 72px; background: var(--blue-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 800; color: var(--white); margin: 0 auto 16px; }
+    .step-label { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.9); line-height: 1.5; }
+    .cta-section { background: linear-gradient(135deg, var(--blue) 0%, var(--navy) 100%); padding: 80px 40px; text-align: center; color: var(--white); }
+    .cta-section h2 { font-size: 32px; font-weight: 800; margin-bottom: 16px; line-height: 1.5; }
+    .cta-section p { font-size: 16px; color: rgba(255,255,255,0.8); margin-bottom: 36px; font-weight: 300; }
+    footer { background: var(--black); color: rgba(255,255,255,0.5); text-align: center; padding: 24px; font-size: 13px; }
+    footer strong { color: rgba(255,255,255,0.8); }
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; }
+      .hero { padding: 60px 20px 50px; }
+      .hero h1 { font-size: 26px; }
+      .pain-section, .solution-section, .how-section, .cta-section { padding: 50px 20px; }
     }
+  </style>
+</head>
+<body>
 
-    /* NAV */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 40px;
-      background: var(--white);
-      border-bottom: 2px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+  <nav>
+    <div class="logo-text">
+      شريك النمو
+      <span>Growth Partner</span>
+    </div>
+    <a href="https://wsend.co/966581610644" target="_blank" class="btn-primary" style="padding: 10px 24px; font-size: 14px;">احجز استشارة</a>
+  </nav>
 
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+  <section class="hero">
+    <div class="guarantee-banner">
+      🔒 ضمان صفر مخاطرة — نشتغل معك مجاناً حتى يتحقق الهدف
+    </div>
+    <h1>أنا شريك النمو اللي يحوّل عيادتك إلى <em>ماكينة تجيب عملاء</em></h1>
+    <p>أبني لك نظام متكامل يجذب العملاء ويزيد أرباحك بشكل مستمر وقابل للقياس</p>
+    <div class="cta-group">
+      <a href="https://wsend.co/966581610644" target="_blank" class="btn-white">ابدأ الآن</a>
+      <a href="#how" class="btn-outline">كيف نشتغل؟</a>
+    </div>
+  </section>
 
-    .logo-area img {
-      width: 56px;
-      height: 56px;
+  <section class="pain-section">
+    <div class="section-label">هل تعاني من</div>
+    <h2 class="section-title">مشاكل شائعة في عيادات التجميل</h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">📉</div>
+        <div class="pain-text">ضعف عدد العملاء الجدد رغم الجهد</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">💸</div>
+        <div class="pain-text">إعلانات تصرف ميزانية بدون نتائج حقيقية</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📱</div>
+        <div class="pain-text">محتوى كثير على السوشال ميديا بدون حجوزات</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="solution-section">
+    <div class="section-label">الحل</div>
+    <h2 class="section-title">استراتيجية متكاملة تحوّل المتابعين إلى عملاء</h2>
+    <p class="solution-desc">
+      بدلاً من التجربة والخطأ، أبني لك نظام جاهز يعمل على مدار الساعة — من الإعلان الأول حتى الحجز المؤكد.
+    </p>
+  </section>
+
+  <section class="how-section" id="how">
+    <div class="section-label">المنهجية</div>
+    <h2 class="section-title">كيف نشتغل معاً؟</h2>
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-num">١</div>
+        <div class="step-label">تحليل العيادة والسوق</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">٢</div>
+        <div class="step-label">بناء الاستراتيجية</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">٣</div>
+        <div class="step-label">تنفيذ الحملات</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">٤</div>
+        <div class="step-label">قياس وتحسين النتائج</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>جاهز تبدأ؟</h2>
+    <p>احجز استشارة مجانية ونبني معاً خطة نمو مخصصة لعيادتك</p>
+    <a href="https://wsend.co/966581610644" target="_blank" class="btn-white">احجز استشارة مجانية</a>
+  </section>
+
+  <footer>
+    <strong>شريك النمو</strong> — جميع الحقوق محفوظة &copy; 2025
+  </footer>
+
+</body>
+</html>
